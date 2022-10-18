@@ -26,12 +26,12 @@ export class EstudiantesComponent implements OnInit, AfterViewInit {
 
   columnas: string [] = ['nombre', 'correo', 'comision', 'estado', 'acciones'];
 
-  dataSource: MatTableDataSource<Estudiante> = new MatTableDataSource<Estudiante>(this.estudiantes);
+  dataSource: MatTableDataSource<Estudiante> = new MatTableDataSource<Estudiante>();
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.dataSource);
+    this.dataSource.data =  this.estudiantes;
   }
 
   ngAfterViewInit(): void {
